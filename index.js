@@ -62,3 +62,6 @@ client.on('interactionCreate', async interaction => {
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true});
     }
 });
+
+// starts the bot
+client.login(process.env.TOKEN);
