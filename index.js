@@ -63,5 +63,16 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
+// handle rejection of promises or uncaught exceptions
+process.on('unhandledRejection', error => {
+    // Will print "unhandledRejection err is not defined"
+    console.error('unhandledRejection', error);
+});
+
+// handle uncaught exceptions
+process.on('uncaughtException', error => {
+    console.error('uncaughtException', error);
+});
+
 // starts the bot
 client.login(process.env.TOKEN);
