@@ -29,12 +29,9 @@ module.exports = {
 
             // delete all messages containing the string
             await interaction.channel.bulkDelete(messagesToDelete);
-            interaction.deferReply();
-            // use ai to style a response to a question utilizing two variables
-            const response = await deleteResponse(messagesToDelete.size, string);
 
             // reply with the number of messages deleted
-            await interaction.editReply(response);
+            interaction.reply(`Meowwww! I deleted ${messagesToDelete.size} messages from containing "${string}"!`);
         } else {
             await interaction.reply('You do not have permission to use this command');
         }
